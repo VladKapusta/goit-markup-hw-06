@@ -58,7 +58,18 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
 .list {
   list-style: none;
   margin: 0;
@@ -370,19 +381,36 @@ position: relative;
 margin-bottom: 30px;
 }
 .modal-form .check-input {
+  position: absolute;
+  white-space: nowrap;
   width: 1px;
   height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 .modal-form .check-label {
+  margin-left: 10px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 .modal-form .check-link {
-  text-decoration-line: underline;
+  position: relative;
+  text-decoration: none;
   color: var(--acent-color);
-  
-
+}
+.modal-form .check-link::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--acent-color);
 }
 .modal-form .icon-check {
   position: absolute;
@@ -427,6 +455,7 @@ margin-bottom: 30px;
   background-color: var(--button-acent-color);
 }
 /* Наші переваги */
+
 .features-list {
   display: flex;
 }
